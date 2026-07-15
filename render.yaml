@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=https://render.com/schema/render.yaml.json
+#
+# Web Check on Render — one-click gallery template
+# Repo: https://github.com/render-examples/web-check-render-template
+# Upstream: https://github.com/Lissy93/web-check
+# Image: https://hub.docker.com/r/lissy93/web-check
+#
+# Pattern: image-wrapper (official lissy93/web-check image with Chromium).
+# Optional OSINT API keys can be added after deploy; core scans work without them.
+
+previews:
+  generation: off
+
+services:
+  - type: web
+    name: web-check
+    runtime: image
+    plan: standard
+    region: oregon
+    image:
+      url: docker.io/lissy93/web-check:2.1.10
+    healthCheckPath: /
+    autoDeployTrigger: off
+    envVars:
+      - key: PORT
+        value: "3000"
+      # Render terminates TLS and proxies to the service.
+      - key: TRUST_PROXY
+        value: "1"
+      - key: CHROME_PATH
+        value: "/usr/bin/chromium"
+      - key: PUPPETEER_EXECUTABLE_PATH
+        value: "/usr/bin/chromium"
+      - key: PUPPETEER_SKIP_DOWNLOAD
+        value: "true"
+      # Optional enrichment APIs (leave blank at Apply; set later in Dashboard).
+      - key: GOOGLE_CLOUD_API_KEY
+        sync: false
+      - key: SHODAN_API_KEY
+        sync: false
+      - key: WHO_API_KEY
+        sync: false
+      - key: SECURITY_TRAILS_API_KEY
+        sync: false
+      - key: URL_SCAN_API_KEY
+        sync: false
+      - key: CLOUDMERSIVE_API_KEY
+        sync: false
+      - key: BUILT_WITH_API_KEY
+        sync: false
+      - key: TRANCO_API_KEY
+        sync: false
+      - key: TRANCO_USERNAME
+        sync: false
+      - key: TORRENT_IP_API_KEY
+        sync: false
+      - key: API_ENABLE_RATE_LIMIT
+        value: "true"
