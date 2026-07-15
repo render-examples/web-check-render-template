@@ -6,7 +6,8 @@
 # Image: https://hub.docker.com/r/lissy93/web-check
 #
 # Pattern: image-wrapper (official lissy93/web-check image with Chromium).
-# Optional OSINT API keys can be added after deploy; core scans work without them.
+# Optional OSINT API keys: add in Dashboard after deploy (see .env.example). Do not
+# declare them as sync:false here or Apply will prompt for every key.
 
 previews:
   generation: off
@@ -24,7 +25,6 @@ services:
     envVars:
       - key: PORT
         value: "3000"
-      # Render terminates TLS and proxies to the service.
       - key: TRUST_PROXY
         value: "1"
       - key: CHROME_PATH
@@ -33,26 +33,5 @@ services:
         value: "/usr/bin/chromium"
       - key: PUPPETEER_SKIP_DOWNLOAD
         value: "true"
-      # Optional enrichment APIs (leave blank at Apply; set later in Dashboard).
-      - key: GOOGLE_CLOUD_API_KEY
-        sync: false
-      - key: SHODAN_API_KEY
-        sync: false
-      - key: WHO_API_KEY
-        sync: false
-      - key: SECURITY_TRAILS_API_KEY
-        sync: false
-      - key: URL_SCAN_API_KEY
-        sync: false
-      - key: CLOUDMERSIVE_API_KEY
-        sync: false
-      - key: BUILT_WITH_API_KEY
-        sync: false
-      - key: TRANCO_API_KEY
-        sync: false
-      - key: TRANCO_USERNAME
-        sync: false
-      - key: TORRENT_IP_API_KEY
-        sync: false
       - key: API_ENABLE_RATE_LIMIT
         value: "true"
