@@ -20,8 +20,8 @@ Deploy **Web Check**, the all-in-one OSINT tool for analysing any website, on Re
   <a href="https://hub.docker.com/r/lissy93/web-check">
     <img src="https://img.shields.io/badge/Image-lissy93%2Fweb--check-2496ED?logo=docker&logoColor=white" alt="Docker image" />
   </a>
-  <a href="https://web-check.xyz">
-    <img src="https://img.shields.io/badge/Demo-web--check.xyz-0ea5e9" alt="Demo" />
+  <a href="https://web-check-n02a.onrender.com/check">
+    <img src="https://img.shields.io/badge/Demo-onrender.com-0ea5e9" alt="Live demo on Render" />
   </a>
 </p>
 
@@ -165,7 +165,7 @@ assets/           Hero / logo
 **Web Check:**
 - [Upstream repo](https://github.com/Lissy93/web-check)
 - [Docker Hub](https://hub.docker.com/r/lissy93/web-check)
-- [Live demo](https://web-check.xyz)
+- [Live demo on Render](https://web-check-n02a.onrender.com/check)
 - [Env sample](https://github.com/Lissy93/web-check/blob/master/.env.sample)
 
 ## License
